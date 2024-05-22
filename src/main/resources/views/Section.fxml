@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="677.0" style="-fx-background-color: #f4f4f9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SectionController">
+    <children>
+        <Label alignment="CENTER" layoutX="200.0" layoutY="10.0" prefHeight="35.0" prefWidth="277.0" style="-fx-text-fill: #1976d2;" text="Section Drug Orders">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <SplitPane dividerPositions="0.5026595744680851" layoutX="0.0" layoutY="50.0" prefHeight="360.0" prefWidth="677.0" style="-fx-background-color: #f4f4f9;">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="338.0" style="-fx-background-color: #e3f2fd;">
+                    <children>
+                        <TableView fx:id="tableViewDrugs" layoutX="13.0" layoutY="52.0" prefHeight="256.0" prefWidth="310.0" style="-fx-border-color: #1976d2; -fx-border-radius: 5px;">
+                            <columns>
+                                <TableColumn fx:id="tableColumnName" prefWidth="113.6" text="Name" />
+                                <TableColumn fx:id="tableColumnPrice" prefWidth="65.6" text="Price" />
+                                <TableColumn fx:id="tableColumnDescription" prefWidth="129.6" text="Description" />
+                            </columns>
+                        </TableView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="22.0" prefHeight="20.0" prefWidth="174.0" style="-fx-text-fill: #1976d2;" text="List of Available Drugs">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="quantityTextField" layoutX="22.0" layoutY="318.0" prefHeight="20.0" prefWidth="118.0" promptText="Quantity" />
+                        <Button layoutX="220.0" layoutY="317.0" mnemonicParsing="false" onAction="#handleAddOrderDrug" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 5px;" text="Add Order Drug" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="338.0" style="-fx-background-color: #e8f5e9;">
+                    <children>
+                        <TableView fx:id="tableOrderItems" layoutX="27.0" layoutY="41.0" prefHeight="217.0" prefWidth="278.0" style="-fx-border-color: #388e3c; -fx-border-radius: 5px;">
+                            <columns>
+                                <TableColumn fx:id="tableColumnOrderItemName" prefWidth="140.0" text="Drug Name" />
+                                <TableColumn fx:id="tableColumnOrderItemQuantity" prefWidth="140.0" text="Quantity" />
+                            </columns>
+                        </TableView>
+                        <Button layoutX="213.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleAddOrder" prefHeight="48.0" prefWidth="100.0" style="-fx-background-color: #388e3c; -fx-text-fill: white; -fx-background-radius: 5px;" text="Add Order" />
+                        <Button layoutX="27.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleRemoveOrderItem" prefHeight="48.0" prefWidth="100.0" style="-fx-background-color: #d32f2f; -fx-text-fill: white; -fx-background-radius: 5px;" text="Cancel" />
+                        <Label layoutX="132.0" layoutY="14.0" style="-fx-text-fill: #388e3c;" text="Your Order">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <Button layoutX="599.0" layoutY="413.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: #d32f2f; -fx-text-fill: white; -fx-background-radius: 5px;" text="Logout" />
+        <Button layoutX="1.0" layoutY="413.0" mnemonicParsing="false" onAction="#handleYourOrders" prefHeight="33.0" prefWidth="118.0" style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 5px;" text="Your Made Orders" />
+    </children>
+</AnchorPane>
